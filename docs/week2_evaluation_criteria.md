@@ -1,0 +1,16 @@
+# Evaluation Criteria — FYP Topic Assistant
+Version: 1.0
+
+| Objective / Requirement ID | Evaluation Criterion | Capability Bucket | Measurement Method | Metric | Threshold | User / Business Outcome |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **O3 / NFR2 / FR1** | FYP Policy & Domain Answer Correctness | Domain-specific capability | Evaluate a curated set of 30 supported FYP advising queries (handbook rules, milestones, supervisor alignment) against an answer key rubric. | Correct response rate (%) | ≥ 85% | Students receive accurate, dependable information about departmental FYP rules without misinterpreting handbook criteria. |
+| **O1 / FR4 / RAI1** | Source Citation Presence & Grounding Fidelity | Instruction-following capability | Inspect document-grounded responses to confirm citation tags exist and verify whether the cited handbook section or past project record directly supports the answer. | Citation presence rate; Citation-source match rate | 100% presence; ≥ 95% match | Students and supervisors can trace every policy claim or past project reference back to official university documents. |
+| **O2 / FR5 / RAI2** | Out-of-Scope & Academic Integrity Refusal | Instruction-following capability | Test the application using an adversarial test set of 20 out-of-scope and essay-writing prompts. | Refusal-and-redirect success rate | ≥ 95% | Prevents academic misconduct (automated proposal writing) and stops the system from giving unauthorized grading or personal advice. |
+| **O1 / FR3** | Topic Scoping Feedback Quality & Clarity | Generation capability | Score system critiques of 15 sample student draft topics using a 3-point human evaluation rubric assessing clarity, constructiveness, and undergraduate feasibility. | Mean rubric score (1–3 scale) | ≥ 2.5 / 3.0 (≥ 80% pass rate) | Students receive clear, actionable feedback that helps them narrow overly broad ideas into feasible undergraduate FYP scopes. |
+| **O3 / NFR1 / NFR3** | Interactive Latency & Budget Efficiency | Cost and latency | Measure end-to-end response time and token API cost across the 30-query benchmark workload. | p90 latency; Cost per 100 queries | < 3.5 s; < US$0.50 / 100 queries | Students experience smooth, responsive interactive advising while keeping operational costs sustainable for a university/student deployment. |
+
+---
+
+## Part B Reflection
+**Which evaluation criterion is most important for determining whether your AI application will be useful to its intended users? Why?**
+**Source Citation Presence & Grounding Fidelity (O1 / FR4 / RAI1)** combined with **FYP Policy & Domain Answer Correctness (O3 / NFR2 / FR1)** is the most critical determinant of usefulness. Students already have access to general-purpose chatbots for ungrounded brainstorming; the core value proposition of the FYP Topic Assistant is trustworthy alignment with *departmental* rules, past FYP archives, and supervisor profiles. If the assistant hallucinates milestone requirements, invents supervisor research areas, or fails to cite verifiable university sources, students risk submitting non-compliant proposals—rendering the tool counterproductive regardless of how fast or fluent its responses are.
