@@ -65,8 +65,30 @@ Third- and final-year undergraduate students preparing their Final Year Project 
 \## Weekly Progress
 
 | Week | Focus | Deliverable | Status |
-
 |------|-------|-------------|--------|
+| W1 | System map + project scope | README + [docs/week1_project_scope.md](docs/week1_project_scope.md) | ✅ |
+| W2 | Requirements, evaluation criteria, V1 architecture | [requirements](docs/week2_requirements.md), [evaluation criteria](docs/week2_evaluation_criteria.md), [architecture](docs/week2_architecture_v1.png), [decisions](docs/week2_architecture_decisions.md) | ✅ |
+| W3 | Data engineering: V1 data pipeline, lineage | [notebook](notebooks/week3_pipeline.ipynb), [data inventory](docs/week3_data_inventory.md), [pipeline diagram](docs/week3_pipeline_diagram.png), [pipeline decisions](docs/week3_pipeline_decisions.md), [prepared data](data/processed/prepared_text.jsonl), [lineage manifest](data/week3_manifest.json), [pipeline run](data/pipeline_v1/documents/) | ✅ |
 
-| W1 | System map + project scope | README + docs | ✅ |
+
+## Week 3 — V1 Data Pipeline (Pathway A: PDF/TXT)
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Efxn-spec/ai-engineering-fyp-topic-assistant/blob/main/notebooks/week3_pipeline.ipynb)
+
+The *Departmental FYP Knowledge Sources* component of the Week 2 architecture is now an executable, traceable batch ETL pipeline:
+
+**SOURCE** (3 UTM PDFs, 129 pages) → **INGEST** (explicit selection, SHA-256) → **INSPECT** (pypdf, extractability check) → **PREPARE** (whitespace cleanup, paragraph-aware chunks ≤ 500 chars **per page**) → **VALIDATE** (non-empty output, unique IDs, every chunk has a page) → **RECORD LINEAGE** (manifests, rerun check)
+
+- **Why PDF/TXT only:** every V1 knowledge source is an official PDF (FR1, FR3, FR4/RAI1). No requirement needs tabular, image, JSON, audio or time-series data.
+- **Key decision:** page-aware paragraph chunking was chosen over fixed-size chunking. Every one of the 420 chunks carries document title + page for citations (FR4/RAI1), and 22.9 % of chunks start mid-sentence, against 71.7 % for fixed-size chunks.
+- **Evidence:** lineage validation PASS, repeatability rerun PASS, and the Part C pipeline output is byte-identical to the Part B prepared data.
+- **Known caveats:** two sources are interim proxies (FKM undergraduate guideline, MSc project handbook) for the Faculty of Computing PSM guideline. Supervisor profiles and past FYP titles (FR2) are not yet collected. See [docs/week3_data_inventory.md](docs/week3_data_inventory.md).
+
+```
+data/
+├── raw/fyp_documents/          # original PDFs (unchanged, S01–S03)
+├── processed/prepared_text.jsonl   # Part B prepared corpus
+├── week3_manifest.json         # Part B lineage manifest
+└── pipeline_v1/documents/      # Part C pipeline output + pipeline_manifest.json
+```
 

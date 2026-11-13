@@ -1,0 +1,51 @@
+{
+  "pipeline_version": "week3-v1",
+  "generated_at_utc": "2026-11-13T13:10:35.714574+00:00",
+  "records": [
+    {
+      "source_id": "S01",
+      "source_filename": "fyp_documents/utm_fyp_psm_guideline.pdf",
+      "source_title": "Undergraduate Project (UGP) Guideline, Faculty of Mechanical Engineering, UTM",
+      "source_sha256": "8ca7ec4aa2c67b30fa7b7b93adba7a527f000f9756e451fddd9c55a1c5b34186",
+      "prepared_output": "data/processed/prepared_text.jsonl",
+      "prepared_sha256": "a14217d1df8654310c69d0d511543fd2b44ef6fe110963d95269fd1189118d94",
+      "prepared_records_from_source": 102,
+      "processing_note": "page-paragraph-aware-char-500",
+      "source_version": "UGP Guideline/2014/1 (2014)",
+      "source_owner": "Undergraduate Project Committee, Faculty of Mechanical Engineering, UTM",
+      "access_rights": "Publicly downloadable UTM document; (c) UTM; redistribution permission not verified",
+      "known_limitations": "page = physical PDF page index; paragraphs crossing a page break are split; running headers/footers and letter-spaced headings retained",
+      "status": "Prepared; quality review pending"
+    },
+    {
+      "source_id": "S02",
+      "source_filename": "fyp_documents/utm_project_scoping_handbook.pdf",
+      "source_title": "Student Handbook for Master's Project, MSc Business Intelligence and Analytics, UTM",
+      "source_sha256": "ba5dc825201c36d141a7346c17c577d9d2d93412fbf967bceb3d2f1061c05617",
+      "prepared_output": "data/processed/prepared_text.jsonl",
+      "prepared_sha256": "a14217d1df8654310c69d0d511543fd2b44ef6fe110963d95269fd1189118d94",
+      "prepared_records_from_source": 80,
+      "processing_note": "page-paragraph-aware-char-500",
+      "source_version": "1st Edition 2017/2018",
+      "source_owner": "MSc BIA Programme Coordinator, Advanced Informatics School (AIS), UTM",
+      "access_rights": "Publicly downloadable UTM document; (c) UTM; redistribution permission not verified",
+      "known_limitations": "page = physical PDF page index; paragraphs crossing a page break are split; running headers/footers and letter-spaced headings retained",
+      "status": "Prepared; quality review pending"
+    },
+    {
+      "source_id": "S03",
+      "source_filename": "fyp_documents/utm_thesis_manual_2015.pdf",
+      "source_title": "UTM Thesis Manual, School of Graduate Studies",
+      "source_sha256": "dd33cd2fc4da4cb0d345a30def441979e5266d6d1aae90a54efb0481e2bf23f0",
+      "prepared_output": "data/processed/prepared_text.jsonl",
+      "prepared_sha256": "a14217d1df8654310c69d0d511543fd2b44ef6fe110963d95269fd1189118d94",
+      "prepared_records_from_source": 238,
+      "processing_note": "page-paragraph-aware-char-500",
+      "source_version": "2015 edition",
+      "source_owner": "School of Graduate Studies (SPS), UTM",
+      "access_rights": "Public URL (research.utm.my); (c) UTM; redistribution permission not verified",
+      "known_limitations": "page = physical PDF page index; paragraphs crossing a page break are split; running headers/footers and letter-spaced headings retained",
+      "status": "Prepared; quality review pending"
+    }
+  ]
+}

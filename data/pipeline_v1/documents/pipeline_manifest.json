@@ -1,0 +1,75 @@
+{
+  "pipeline_version": "week3-v1",
+  "generated_at_utc": "2026-11-13T13:10:41.266642+00:00",
+  "data_type": "documents",
+  "configuration": {
+    "chunk_size": 500,
+    "method": "page-paragraph-aware",
+    "cleaning": "collapse spaces/tabs only"
+  },
+  "processing_method": "page-paragraph-aware text chunks of 500 characters; whitespace collapsed; page reference kept per chunk; 420 records",
+  "sources": [
+    {
+      "path": "data/raw/fyp_documents/utm_fyp_psm_guideline.pdf",
+      "sha256": "8ca7ec4aa2c67b30fa7b7b93adba7a527f000f9756e451fddd9c55a1c5b34186"
+    },
+    {
+      "path": "data/raw/fyp_documents/utm_project_scoping_handbook.pdf",
+      "sha256": "ba5dc825201c36d141a7346c17c577d9d2d93412fbf967bceb3d2f1061c05617"
+    },
+    {
+      "path": "data/raw/fyp_documents/utm_thesis_manual_2015.pdf",
+      "sha256": "dd33cd2fc4da4cb0d345a30def441979e5266d6d1aae90a54efb0481e2bf23f0"
+    }
+  ],
+  "outputs": [
+    "data/pipeline_v1/documents/prepared_text.jsonl"
+  ],
+  "source_output_mapping": [
+    {
+      "source": "data/raw/fyp_documents/utm_fyp_psm_guideline.pdf",
+      "output": "data/pipeline_v1/documents/prepared_text.jsonl",
+      "records": 102
+    },
+    {
+      "source": "data/raw/fyp_documents/utm_project_scoping_handbook.pdf",
+      "output": "data/pipeline_v1/documents/prepared_text.jsonl",
+      "records": 80
+    },
+    {
+      "source": "data/raw/fyp_documents/utm_thesis_manual_2015.pdf",
+      "output": "data/pipeline_v1/documents/prepared_text.jsonl",
+      "records": 238
+    }
+  ],
+  "inspection": {
+    "documents": [
+      {
+        "source": "utm_fyp_psm_guideline.pdf",
+        "characters": 36087,
+        "pages": 23
+      },
+      {
+        "source": "utm_project_scoping_handbook.pdf",
+        "characters": 26725,
+        "pages": 26
+      },
+      {
+        "source": "utm_thesis_manual_2015.pdf",
+        "characters": 93647,
+        "pages": 80
+      }
+    ]
+  },
+  "validation": {
+    "output_count": 1,
+    "output_sha256": [
+      "a14217d1df8654310c69d0d511543fd2b44ef6fe110963d95269fd1189118d94"
+    ],
+    "output_bytes": [
+      298319
+    ]
+  },
+  "source_version": "Per source in data/week3_manifest.json and docs/week3_data_inventory.md",
+  "access_rights": "Publicly downloadable UTM documents; redistribution permission not verified — check before sharing"
+}
